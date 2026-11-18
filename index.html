@@ -1,1 +1,616 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Estúdio de Beleza Essência | Leila Miranda em Vilhena - RO</title>
+    <meta name="description" content="Estúdio de Beleza Essência - Leila Miranda em Vilhena (Jardim das Oliveiras). Cabelos, fibra de vidro, podologia, maquiagem permanente, depilação e estética. 4,8 ★ (88 avaliações). Agende pelo WhatsApp (69) 98468-9068.">
 
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Google Fonts: Playfair Display & Plus Jakarta Sans -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Plus Jakarta Sans', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif'],
+                    },
+                    colors: {
+                        roseGold: {
+                            50: '#FDFBFB',
+                            100: '#F9F2F0',
+                            200: '#EEDFD9',
+                            300: '#E1C8BC',
+                            400: '#CE9F8B',
+                            500: '#B87A60',
+                            600: '#9E6148',
+                            800: '#693E2E',
+                            900: '#43261C',
+                            950: '#271610',
+                        },
+                        champagne: {
+                            400: '#D4A373',
+                            500: '#BC8A58',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body {
+            background-color: #FDFBFB;
+            color: #271610;
+            overflow-x: hidden;
+        }
+        .glass-nav {
+            background: rgba(253, 251, 251, 0.94);
+            backdrop-filter: blur(14px);
+            -webkit-backdrop-filter: blur(14px);
+        }
+        .rose-gradient-text {
+            background: linear-gradient(135deg, #9E6148 0%, #B87A60 50%, #D4A373 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .rose-btn {
+            background: linear-gradient(135deg, #B87A60 0%, #8A5038 100%);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .rose-btn:hover {
+            background: linear-gradient(135deg, #9E6148 0%, #693E2E 100%);
+            transform: translateY(-2px);
+            box-shadow: 0 12px 30px -8px rgba(184, 122, 96, 0.4);
+        }
+        .card-lux {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .card-lux:hover {
+            transform: translateY(-6px);
+            border-color: #B87A60;
+            box-shadow: 0 20px 40px -15px rgba(184, 122, 96, 0.18);
+        }
+        @keyframes pulse-ring {
+            0% { transform: scale(0.95); opacity: 0.8; }
+            70% { transform: scale(1.28); opacity: 0; }
+            100% { transform: scale(1.28); opacity: 0; }
+        }
+        .wa-pulse::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            border-radius: 9999px;
+            background-color: #25D366;
+            z-index: -1;
+            animation: pulse-ring 2s infinite;
+        }
+        /* Marca d'água evidente de proteção de prévia */
+        .watermark-overlay {
+            position: fixed;
+            inset: 0;
+            z-index: 9999;
+            pointer-events: none;
+            overflow: hidden;
+            display: flex;
+            flex-wrap: wrap;
+            align-content: space-around;
+            justify-content: space-around;
+            gap: 3rem;
+        }
+        .watermark-item {
+            transform: rotate(-28deg);
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            font-weight: 800;
+            font-size: clamp(1.1rem, 2.5vw, 1.8rem);
+            letter-spacing: 0.14em;
+            text-transform: uppercase;
+            color: rgba(158, 97, 72, 0.22);
+            text-shadow: 0 1px 2px rgba(255, 255, 255, 0.45);
+            white-space: nowrap;
+            user-select: none;
+        }
+    </style>
+</head>
+<body class="antialiased selection:bg-roseGold-500 selection:text-white">
+
+    <!-- MARCA D'ÁGUA EVIDENTE EM TODA A TELA (NÃO BLOQUEIA CLIQUES) -->
+    <div id="watermark-layer" class="watermark-overlay" aria-hidden="true"></div>
+
+    <!-- TOP BAR DE CREDIBILIDADE -->
+    <div class="bg-roseGold-950 text-roseGold-100 text-xs py-2.5 px-4 border-b border-roseGold-900">
+        <div class="max-w-7xl mx-auto flex flex-wrap items-center justify-between gap-2">
+            <div class="flex items-center gap-4">
+                <span class="inline-flex items-center gap-1.5 font-medium text-amber-300">
+                    <i class="fa-solid fa-star text-amber-400"></i>
+                    4,8 Estrelas • 88 Avaliações Reais no Google
+                </span>
+                <span class="hidden md:inline-flex items-center gap-1.5 text-roseGold-200">
+                    <i class="fa-solid fa-location-dot text-champagne-400"></i>
+                    Jardim das Oliveiras, Vilhena - RO
+                </span>
+            </div>
+            <div class="flex items-center gap-4 ml-auto sm:ml-0">
+                <span class="text-roseGold-300">Seg. a Sex. até 18h | Sáb. até 14h</span>
+                <a href="https://wa.me/5569984689068?text=Olá! Vim pelo site e gostaria de agendar um horário no Estúdio Essência." target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 text-roseGold-100 hover:text-white transition font-medium">
+                    <i class="fa-brands fa-whatsapp text-emerald-400"></i>
+                    (69) 98468-9068
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- HEADER FIXO -->
+    <header class="sticky top-0 z-50 glass-nav border-b border-roseGold-200/80 shadow-xs">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16 sm:h-20">
+                <!-- Logo -->
+                <a href="#inicio" class="flex items-center gap-3 group">
+                    <div class="w-10 h-10 sm:w-11 sm:h-11 rounded-2xl bg-gradient-to-br from-roseGold-400 to-roseGold-600 flex items-center justify-center text-white font-serif font-bold text-xl shadow-md group-hover:scale-105 transition">
+                        E
+                    </div>
+                    <div>
+                        <span class="font-serif font-bold text-base sm:text-xl text-roseGold-950 tracking-tight block leading-none">
+                            Essência • Leila Miranda
+                        </span>
+                        <span class="text-[10px] uppercase tracking-[0.2em] text-roseGold-600 font-bold block mt-0.5">
+                            Salão de Beleza VIP • Vilhena
+                        </span>
+                    </div>
+                </a>
+
+                <!-- Navegação Desktop -->
+                <nav class="hidden lg:flex items-center gap-8 text-xs font-bold uppercase tracking-widest text-roseGold-900">
+                    <a href="#servicos" class="hover:text-roseGold-600 transition">Serviços VIP</a>
+                    <a href="#sobre" class="hover:text-roseGold-600 transition">O Estúdio</a>
+                    <a href="#avaliacoes" class="hover:text-roseGold-600 transition">Avaliações 4.8★</a>
+                    <a href="#localizacao" class="hover:text-roseGold-600 transition">Endereço & Horários</a>
+                </nav>
+
+                <!-- Botão Agendamento -->
+                <div class="flex items-center gap-2 sm:gap-3">
+                    <a href="https://wa.me/5569984689068?text=Olá! Vim pelo site e quero agendar meu horário no Estúdio de Beleza Essência." 
+                       target="_blank" rel="noopener noreferrer"
+                       class="rose-btn text-white text-xs sm:text-sm font-bold px-5 py-2.5 rounded-xl shadow-md inline-flex items-center gap-2">
+                        <i class="fa-brands fa-whatsapp text-lg"></i>
+                        <span class="hidden sm:inline">Agendar VIP</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section id="inicio" class="relative overflow-hidden bg-gradient-to-b from-roseGold-100/70 via-roseGold-50/40 to-transparent pt-16 pb-24 sm:pt-24 sm:pb-32 border-b border-roseGold-200/60">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-12 gap-12 items-center">
+                <div class="lg:col-span-7 text-center lg:text-left">
+                    <div class="inline-flex items-center gap-2 bg-white border border-roseGold-300 px-4 py-1.5 rounded-full mb-6 shadow-xs">
+                        <div class="flex items-center gap-1 text-amber-500 text-xs">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                        </div>
+                        <span class="text-xs font-bold text-roseGold-950">4.8 Estrelas no Google (88 Avaliações Reais)</span>
+                    </div>
+
+                    <h1 class="font-serif font-bold text-4xl sm:text-6xl lg:text-7xl text-roseGold-950 leading-[1.08] tracking-tight mb-6">
+                        Sua beleza elevada à <span class="rose-gradient-text italic">essência</span> máxima.
+                    </h1>
+
+                    <p class="text-base sm:text-lg text-roseGold-900/80 max-w-xl mx-auto lg:mx-0 leading-relaxed mb-8">
+                        Salão de beleza VIP completo sob a liderança de Leila Miranda. Cabelos, maquiagem permanente, fibra de vidro, podologia, tratamentos para pele e espaço infantil no Jardim das Oliveiras em Vilhena - RO.
+                    </p>
+
+                    <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4">
+                        <a href="https://wa.me/5569984689068?text=Olá Leila! Gostaria de agendar um atendimento no Estúdio de Beleza Essência." 
+                           target="_blank" rel="noopener noreferrer"
+                           class="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 rose-btn text-white font-bold px-8 py-4 rounded-2xl shadow-xl transition text-base">
+                            <i class="fa-brands fa-whatsapp text-xl"></i>
+                            Agendar Horário no WhatsApp
+                        </a>
+                        <a href="#servicos" 
+                           class="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 bg-white hover:bg-roseGold-100 text-roseGold-950 border border-roseGold-300 font-bold px-8 py-4 rounded-2xl transition text-base">
+                            Ver Menu de Serviços VIP
+                        </a>
+                    </div>
+                </div>
+
+                <div class="lg:col-span-5">
+                    <div class="relative mx-auto max-w-md lg:max-w-none">
+                        <div class="rounded-3xl overflow-hidden shadow-2xl border-4 border-white bg-roseGold-200 aspect-[4/4.5]">
+                            <img src="https://images.unsplash.com/photo-1562322140-8baeececf3df?auto=format&fit=crop&w=900&q=80" 
+                                 onerror="this.src='https://placehold.co/800x900/EEDFD9/693E2E?text=Estudio+Essencia+Leila+Miranda'"
+                                 alt="Estúdio de Beleza Essência Leila Miranda" 
+                                 class="w-full h-full object-cover">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SEÇÃO DE SERVIÇOS VIP -->
+    <section id="servicos" class="py-20 sm:py-28 bg-white border-b border-roseGold-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-2xl mx-auto mb-16">
+                <span class="text-roseGold-600 font-bold text-xs uppercase tracking-[0.25em]">Salão de Beleza VIP & Infantil</span>
+                <h2 class="font-serif font-bold text-3xl sm:text-5xl text-roseGold-950 mt-2">
+                    Menu Completo de Cuidados
+                </h2>
+                <p class="text-roseGold-900/70 text-sm sm:text-base mt-3">
+                    Profissionais especializados em transformar sua autoestima com excelência e conforto.
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- 1. Cabelos & Penteados -->
+                <div class="card-lux bg-roseGold-50/70 border border-roseGold-200 rounded-3xl p-7 flex flex-col justify-between shadow-xs">
+                    <div>
+                        <div class="w-14 h-14 rounded-2xl bg-roseGold-200 text-roseGold-950 flex items-center justify-center text-2xl mb-6 shadow-xs">
+                            💇‍♀️
+                        </div>
+                        <h3 class="font-serif font-bold text-2xl text-roseGold-950 mb-3">Cabelos, Escova & Penteados</h3>
+                        <p class="text-roseGold-900/75 text-xs leading-relaxed mb-6">
+                            Cortes modernos, escovas duradouras e penteados exclusivos para noivas, formandas e ocasiões especiais. Atendimento VIP e salão infantil.
+                        </p>
+                    </div>
+                    <a href="https://wa.me/5569984689068?text=Olá! Gostaria de agendar *Corte / Escova / Penteado* no Estúdio Essência."
+                       target="_blank" rel="noopener noreferrer"
+                       class="w-full bg-white hover:bg-roseGold-100 text-roseGold-950 border border-roseGold-300 font-bold text-xs uppercase tracking-wider py-3 rounded-xl inline-flex items-center justify-center gap-2 transition">
+                        <i class="fa-brands fa-whatsapp text-emerald-600"></i> Agendar
+                    </a>
+                </div>
+
+                <!-- 2. Alongamento em Fibra de Vidro -->
+                <div class="card-lux bg-roseGold-50/70 border border-roseGold-200 rounded-3xl p-7 flex flex-col justify-between shadow-xs">
+                    <div>
+                        <div class="w-14 h-14 rounded-2xl bg-roseGold-200 text-roseGold-950 flex items-center justify-center text-2xl mb-6 shadow-xs">
+                            ✨
+                        </div>
+                        <h3 class="font-serif font-bold text-2xl text-roseGold-950 mb-3">Alongamento em Fibra de Vidro</h3>
+                        <p class="text-roseGold-900/75 text-xs leading-relaxed mb-6">
+                            Unhas em fibra de vidro com acabamento natural, curvatura perfeita e altíssima durabilidade para suas mãos.
+                        </p>
+                    </div>
+                    <a href="https://wa.me/5569984689068?text=Olá! Gostaria de agendar *Fibra de Vidro* no Estúdio Essência."
+                       target="_blank" rel="noopener noreferrer"
+                       class="w-full bg-white hover:bg-roseGold-100 text-roseGold-950 border border-roseGold-300 font-bold text-xs uppercase tracking-wider py-3 rounded-xl inline-flex items-center justify-center gap-2 transition">
+                        <i class="fa-brands fa-whatsapp text-emerald-600"></i> Agendar
+                    </a>
+                </div>
+
+                <!-- 3. Maquiagem & Maquiagem Permanente -->
+                <div class="card-lux bg-roseGold-50/70 border border-roseGold-200 rounded-3xl p-7 flex flex-col justify-between shadow-xs">
+                    <div>
+                        <div class="w-14 h-14 rounded-2xl bg-roseGold-200 text-roseGold-950 flex items-center justify-center text-2xl mb-6 shadow-xs">
+                            💄
+                        </div>
+                        <h3 class="font-serif font-bold text-2xl text-roseGold-950 mb-3">Maquiagem & Permanente</h3>
+                        <p class="text-roseGold-900/75 text-xs leading-relaxed mb-6">
+                            Serviço de maquiagem profissional para eventos e maquiagem permanente para realçar seus traços com total naturalidade.
+                        </p>
+                    </div>
+                    <a href="https://wa.me/5569984689068?text=Olá! Gostaria de agendar *Maquiagem / Maquiagem Permanente* no Estúdio Essência."
+                       target="_blank" rel="noopener noreferrer"
+                       class="w-full bg-white hover:bg-roseGold-100 text-roseGold-950 border border-roseGold-300 font-bold text-xs uppercase tracking-wider py-3 rounded-xl inline-flex items-center justify-center gap-2 transition">
+                        <i class="fa-brands fa-whatsapp text-emerald-600"></i> Agendar
+                    </a>
+                </div>
+
+                <!-- 4. Cuidados com a Pele & Tratamento para Acne -->
+                <div class="card-lux bg-roseGold-50/70 border border-roseGold-200 rounded-3xl p-7 flex flex-col justify-between shadow-xs">
+                    <div>
+                        <div class="w-14 h-14 rounded-2xl bg-roseGold-200 text-roseGold-950 flex items-center justify-center text-2xl mb-6 shadow-xs">
+                            🌿
+                        </div>
+                        <h3 class="font-serif font-bold text-2xl text-roseGold-950 mb-3">Cuidados com a Pele & Acne</h3>
+                        <p class="text-roseGold-900/75 text-xs leading-relaxed mb-6">
+                            Limpeza de pele profunda, tratamentos especializados para acne e rejuvenescimento facial para uma pele radiante e saudável.
+                        </p>
+                    </div>
+                    <a href="https://wa.me/5569984689068?text=Olá! Gostaria de agendar *Tratamento para Pele / Acne* no Estúdio Essência."
+                       target="_blank" rel="noopener noreferrer"
+                       class="w-full bg-white hover:bg-roseGold-100 text-roseGold-950 border border-roseGold-300 font-bold text-xs uppercase tracking-wider py-3 rounded-xl inline-flex items-center justify-center gap-2 transition">
+                        <i class="fa-brands fa-whatsapp text-emerald-600"></i> Agendar
+                    </a>
+                </div>
+
+                <!-- 5. Depilação com Cera & Sobrancelha -->
+                <div class="card-lux bg-roseGold-50/70 border border-roseGold-200 rounded-3xl p-7 flex flex-col justify-between shadow-xs">
+                    <div>
+                        <div class="w-14 h-14 rounded-2xl bg-roseGold-200 text-roseGold-950 flex items-center justify-center text-2xl mb-6 shadow-xs">
+                            ✨
+                        </div>
+                        <h3 class="font-serif font-bold text-2xl text-roseGold-950 mb-3">Depilação & Sobrancelha</h3>
+                        <p class="text-roseGold-900/75 text-xs leading-relaxed mb-6">
+                            Design de sobrancelha personalizado para emoldurar seu olhar e depilação com cera suave e confortável.
+                        </p>
+                    </div>
+                    <a href="https://wa.me/5569984689068?text=Olá! Gostaria de agendar *Depilação / Design de Sobrancelha* no Estúdio Essência."
+                       target="_blank" rel="noopener noreferrer"
+                       class="w-full bg-white hover:bg-roseGold-100 text-roseGold-950 border border-roseGold-300 font-bold text-xs uppercase tracking-wider py-3 rounded-xl inline-flex items-center justify-center gap-2 transition">
+                        <i class="fa-brands fa-whatsapp text-emerald-600"></i> Agendar
+                    </a>
+                </div>
+
+                <!-- 6. Podologia Especializada -->
+                <div class="card-lux bg-roseGold-50/70 border border-roseGold-200 rounded-3xl p-7 flex flex-col justify-between shadow-xs">
+                    <div>
+                        <div class="w-14 h-14 rounded-2xl bg-roseGold-200 text-roseGold-950 flex items-center justify-center text-2xl mb-6 shadow-xs">
+                            👣
+                        </div>
+                        <h3 class="font-serif font-bold text-2xl text-roseGold-950 mb-3">Podologia Especializada</h3>
+                        <p class="text-roseGold-900/75 text-xs leading-relaxed mb-6">
+                            Cuidados profissionais para a saúde e bem-estar dos seus pés, tratamento de unhas encravadas, calosidades e higienização avançada.
+                        </p>
+                    </div>
+                    <a href="https://wa.me/5569984689068?text=Olá! Gostaria de agendar *Podologia* no Estúdio Essência."
+                       target="_blank" rel="noopener noreferrer"
+                       class="w-full bg-white hover:bg-roseGold-100 text-roseGold-950 border border-roseGold-300 font-bold text-xs uppercase tracking-wider py-3 rounded-xl inline-flex items-center justify-center gap-2 transition">
+                        <i class="fa-brands fa-whatsapp text-emerald-600"></i> Agendar
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SEÇÃO SOBRE A LEILA MIRANDA -->
+    <section id="sobre" class="py-20 sm:py-28 bg-roseGold-100/60 border-b border-roseGold-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-12 gap-12 items-center">
+                <div class="lg:col-span-5">
+                    <div class="rounded-3xl overflow-hidden shadow-xl border-4 border-white aspect-[4/5]">
+                        <img src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&w=800&q=80" 
+                             onerror="this.src='https://placehold.co/800x1000/E1C8BC/43261C?text=Leila+Miranda'"
+                             alt="Leila Miranda - Estúdio de Beleza Essência" 
+                             class="w-full h-full object-cover">
+                    </div>
+                </div>
+                <div class="lg:col-span-7 space-y-6">
+                    <span class="text-roseGold-600 font-bold text-xs uppercase tracking-[0.25em]">Excelência sob a direção de Leila Miranda</span>
+                    <h2 class="font-serif font-bold text-3xl sm:text-5xl text-roseGold-950 leading-tight">
+                        Um refúgio de beleza e cuidado no Jardim das Oliveiras.
+                    </h2>
+                    <p class="text-roseGold-900/80 text-sm sm:text-base leading-relaxed">
+                        O <strong class="text-roseGold-950">Estúdio de Beleza Essência</strong> nasceu do sonho de proporcionar um atendimento humanizado, exclusivo e de alto padrão em Vilhena - RO. Sob o comando de Leila Miranda, nossa equipe reúne profissionais apaixonados por realçar a sua melhor versão.
+                    </p>
+                    <p class="text-roseGold-900/80 text-sm sm:text-base leading-relaxed">
+                        Localizados na <strong class="text-roseGold-950">Avenida João Demétrio, 4169 - Jardim das Oliveiras</strong>, oferecemos um ambiente sofisticado, climatizado e preparado para receber você e sua família com todo o conforto.
+                    </p>
+                    <div class="pt-4">
+                        <a href="https://wa.me/5569984689068?text=Olá Leila! Gostaria de conversar sobre os serviços do Estúdio Essência."
+                           target="_blank" rel="noopener noreferrer"
+                           class="inline-flex items-center gap-2.5 rose-btn text-white font-bold px-7 py-3.5 rounded-xl shadow-md transition text-sm">
+                            <i class="fa-brands fa-whatsapp text-lg"></i>
+                            Falar com Leila Miranda no WhatsApp
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- AVALIAÇÕES (4.8 ESTRELAS - 88 AVALIAÇÕES) -->
+    <section id="avaliacoes" class="py-20 sm:py-28 bg-white border-b border-roseGold-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-2xl mx-auto mb-16">
+                <div class="inline-flex items-center gap-1 text-amber-500 text-base mb-3">
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                </div>
+                <h2 class="font-serif font-bold text-3xl sm:text-5xl text-roseGold-950">
+                    4,8 ★ no Google (88 Avaliações)
+                </h2>
+                <p class="text-roseGold-900/70 text-sm sm:text-base mt-2">
+                    A confiança de nossas clientes em Vilhena - RO é o nosso maior patrimônio.
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+                <div class="bg-roseGold-50/70 p-7 rounded-3xl border border-roseGold-200 shadow-xs flex flex-col justify-between">
+                    <div>
+                        <div class="flex items-center gap-1 text-amber-400 text-xs mb-3">
+                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                        </div>
+                        <p class="text-roseGold-950 text-sm leading-relaxed italic">
+                            "O melhor salão de Vilhena! A Leila e sua equipe são super atenciosas. O corte e a escova ficaram perfeitos. Recomendo muito!"
+                        </p>
+                    </div>
+                    <div class="mt-6 pt-4 border-t border-roseGold-200 flex items-center gap-3">
+                        <div class="w-9 h-9 rounded-full bg-roseGold-200 text-roseGold-950 font-bold flex items-center justify-center text-xs">
+                            FS
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-roseGold-950 text-xs">Fernanda Silva</h4>
+                            <span class="text-[11px] text-roseGold-600">Cliente Verificada Google</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-roseGold-50/70 p-7 rounded-3xl border border-roseGold-200 shadow-xs flex flex-col justify-between">
+                    <div>
+                        <div class="flex items-center gap-1 text-amber-400 text-xs mb-3">
+                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                        </div>
+                        <p class="text-roseGold-950 text-sm leading-relaxed italic">
+                            "Fiz tratamento para pele e maquiagem permanente com a Leila. O resultado superou todas as minhas expectativas. Profissional exemplar!"
+                        </p>
+                    </div>
+                    <div class="mt-6 pt-4 border-t border-roseGold-200 flex items-center gap-3">
+                        <div class="w-9 h-9 rounded-full bg-roseGold-200 text-roseGold-950 font-bold flex items-center justify-center text-xs">
+                            CM
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-roseGold-950 text-xs">Carla Medeiros</h4>
+                            <span class="text-[11px] text-roseGold-600">Cliente Verificada Google</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-roseGold-50/70 p-7 rounded-3xl border border-roseGold-200 shadow-xs flex flex-col justify-between">
+                    <div>
+                        <div class="flex items-center gap-1 text-amber-400 text-xs mb-3">
+                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                        </div>
+                        <p class="text-roseGold-950 text-sm leading-relaxed italic">
+                            "Ambiente aconchegante, limpo e com serviços impecáveis. Levo minhas filhas para o salão infantil e faço minhas unhas em fibra de vidro. Nota 10!"
+                        </p>
+                    </div>
+                    <div class="mt-6 pt-4 border-t border-roseGold-200 flex items-center gap-3">
+                        <div class="w-9 h-9 rounded-full bg-roseGold-200 text-roseGold-950 font-bold flex items-center justify-center text-xs">
+                            PR
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-roseGold-950 text-xs">Patrícia Ramos</h4>
+                            <span class="text-[11px] text-roseGold-600">Cliente Verificada Google</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- HORÁRIOS DE FUNCIONAMENTO & LOCALIZAÇÃO -->
+    <section id="localizacao" class="py-20 sm:py-28 bg-roseGold-50/50 border-b border-roseGold-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-2xl mx-auto mb-16">
+                <span class="text-roseGold-600 font-bold text-xs uppercase tracking-[0.25em]">Visite Nosso Espaço</span>
+                <h2 class="font-serif font-bold text-3xl sm:text-5xl text-roseGold-950 mt-2">
+                    Horários & Localização
+                </h2>
+                <p class="text-roseGold-900/70 text-sm sm:text-base mt-2">
+                    Avenida João Demétrio, 4169 - Jardim das Oliveiras, Vilhena - RO.
+                </p>
+            </div>
+
+            <div class="grid lg:grid-cols-12 gap-8 items-stretch max-w-5xl mx-auto">
+                <!-- Horários -->
+                <div class="lg:col-span-5 bg-white p-8 rounded-3xl border border-roseGold-200 shadow-sm flex flex-col justify-between">
+                    <div>
+                        <div class="flex items-center gap-3 mb-6">
+                            <div class="w-12 h-12 rounded-2xl bg-roseGold-100 text-roseGold-950 flex items-center justify-center text-xl">
+                                <i class="fa-regular fa-clock"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-bold text-roseGold-950 text-base uppercase tracking-wider">Horário de Funcionamento</h3>
+                                <span class="text-xs text-emerald-600 font-semibold block mt-0.5">Segunda a Sábado</span>
+                            </div>
+                        </div>
+
+                        <div class="space-y-3 text-xs sm:text-sm text-roseGold-900">
+                            <div class="flex justify-between py-2 border-b border-roseGold-100">
+                                <span class="font-semibold">Segunda a Sexta-feira:</span>
+                                <span class="font-medium text-roseGold-700">08:00 às 18:00</span>
+                            </div>
+                            <div class="flex justify-between py-2 border-b border-roseGold-100">
+                                <span class="font-semibold">Sábado:</span>
+                                <span class="font-medium text-roseGold-700">08:00 às 14:00</span>
+                            </div>
+                            <div class="flex justify-between py-2">
+                                <span class="font-semibold">Domingo:</span>
+                                <span class="font-semibold text-roseRed-600">Fechado</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mt-6 pt-4 border-t border-roseGold-100">
+                        <p class="text-xs text-roseGold-700 mb-2 font-medium">📍 Av. João Demétrio, 4169 - Jardim das Oliveiras</p>
+                        <p class="text-xs text-roseGold-700 font-medium">📞 WhatsApp: (69) 98468-9068</p>
+                    </div>
+                </div>
+
+                <!-- Mapa -->
+                <div class="lg:col-span-7 rounded-3xl overflow-hidden border border-roseGold-200 shadow-lg min-h-[350px]">
+                    <iframe 
+                        title="Mapa Estúdio de Beleza Essência Leila Miranda Vilhena RO"
+                        src="https://maps.google.com/maps?q=Avenida%20Jo%C3%A3o%20Dem%C3%A9trio,%204169,%20Jardim%20das%20Oliveiras,%20Vilhena%20-%20RO,%2076980-658&t=&z=16&ie=UTF8&iwloc=&output=embed"
+                        class="w-full h-full border-0 min-h-[350px]"
+                        loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade">
+                    </iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- RODAPÉ -->
+    <footer class="bg-roseGold-950 text-roseGold-200 pt-16 pb-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-3 gap-10 pb-12 border-b border-roseGold-900">
+                <div class="space-y-3">
+                    <span class="font-serif font-bold text-2xl text-white block">Estúdio de Beleza Essência</span>
+                    <p class="text-xs text-roseGold-300 leading-relaxed">
+                        Leila Miranda & Equipe. Salão de beleza VIP em Vilhena - RO. Nota 4,8 ★ no Google.
+                    </p>
+                </div>
+
+                <div class="space-y-2 text-xs text-roseGold-200">
+                    <h4 class="font-serif font-bold text-sm uppercase tracking-wider text-white mb-3">Endereço Oficial</h4>
+                    <p><i class="fa-solid fa-location-dot text-champagne-400 mr-1.5"></i> Av. João Demétrio, 4169</p>
+                    <p class="pl-5">Jardim das Oliveiras, Vilhena - RO</p>
+                    <p class="pl-5">CEP 76980-658</p>
+                </div>
+
+                <div class="space-y-3">
+                    <h4 class="font-serif font-bold text-sm uppercase tracking-wider text-white">Agendamento & Contato</h4>
+                    <div class="flex flex-col gap-2.5 text-xs">
+                        <a href="https://wa.me/5569984689068?text=Olá! Vim pelo site e gostaria de agendar um horário."
+                           target="_blank" rel="noopener noreferrer"
+                           class="inline-flex items-center gap-2 text-emerald-400 hover:text-emerald-300 font-semibold transition">
+                            <i class="fa-brands fa-whatsapp text-base"></i>
+                            WhatsApp: (69) 98468-9068
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-[11px] text-roseGold-300">
+                <p>&copy; <span id="year"></span> Estúdio de Beleza Essência • Leila Miranda. Todos os direitos reservados.</p>
+                <p>Vilhena - Rondônia • 4.8 ★ no Google</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- BOTÃO FLUTUANTE WHATSAPP -->
+    <a href="https://wa.me/5569984689068?text=Olá Leila! Vim pelo site e gostaria de agendar um horário no Estúdio de Beleza Essência."
+       target="_blank" rel="noopener noreferrer"
+       aria-label="WhatsApp Estúdio Essência Leila Miranda"
+       class="fixed bottom-6 right-6 z-50 wa-pulse w-16 h-16 rounded-full bg-emerald-600 hover:bg-emerald-500 text-white flex items-center justify-center text-3xl shadow-2xl transition-transform hover:scale-105">
+        <i class="fa-brands fa-whatsapp"></i>
+    </a>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            document.getElementById('year').textContent = new Date().getFullYear();
+
+            // Preenche a grade diagonal da marca d'água em toda a viewport
+            const wmLayer = document.getElementById('watermark-layer');
+            if (wmLayer) {
+                const text = 'PRÉVIA EXCLUSIVA • GUSTAVO WEB STUDIO';
+                const totalItems = 48;
+                let html = '';
+                for (let i = 0; i < totalItems; i++) {
+                    html += `<span class="watermark-item">${text}</span>`;
+                }
+                wmLayer.innerHTML = html;
+            }
+        });
+    </script>
+</body>
+</html>
